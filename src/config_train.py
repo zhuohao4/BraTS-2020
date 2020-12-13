@@ -33,17 +33,17 @@ config["training_patch_start_offset"] = (16, 16, 16)  # randomly offset the firs
 config["skip_blank"] = True  # if True, then patches without any target will be skipped
 
 # To be changed accordingly, if it is required.
-config["img_dir"] = "./data/model/brats20/TrainingData"
-config["label_dir"] = "./data/model/brats20/TrainingData"
-config["test_dir"] = "./data/model/brats20/ValidationData" # or change 'ValidationData' --> 'TestData' when you predict for test data
+config["img_dir"] = "./data/brats20/TrainingData"
+config["label_dir"] = "./data/brats20/TrainingData"
+config["test_dir"] = "./data/brats20/ValidationData" # or change 'ValidationData' --> 'TestData' when you predict for test data
 config["num_test_files"] = 125 # Currently, this is number of validation files, change it to number of test files when you predict for test files
 
-config["data_file"] = "./data/model/brats20_data.h5"
-config["data_file_test"] = "./data/model/brats20_data_test.h5"
-config["model_file"] = "./data/model/isensee_2017_model.h5"
+config["data_file"] = "./data/brats20_data.h5"
+config["data_file_test"] = "./data/brats20_data_test.h5"
+config["model_file"] = "./data/isensee_2017_model.h5"
 
-config["training_file"] = "./data/model/training_ids.pkl"
-config["validation_file"] = "./data/model/validation_ids.pkl"
-config["test_file"] = "./data/model/test_ids.pkl"
+config["training_file"] = "./data/training_ids.pkl"
+config["validation_file"] = "./data/validation_ids.pkl"
+config["test_file"] = "./data/test_ids.pkl"
 
 config["overwrite"] = False  # If True, will previous files. If False, will use previously written files.
