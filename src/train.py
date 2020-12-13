@@ -18,8 +18,8 @@ def fetch_training_data_files(return_subject_ids=False):
         subject_ids.append(os.path.basename(subject_dir))
         subject_files = list()
         for modality in config["training_modalities"] + ["seg"]:
-            # subject_files.append(os.path.join(subject_dir, modality + ".nii.gz"))
-            subject_files.append(os.path.join(subject_dir, os.path.basename(subject_dir) + '_' + modality + ".nii.gz"))
+            # subject_files.append(os.path.join(subject_dir, modality + ".nii"))
+            subject_files.append(os.path.join(subject_dir, os.path.basename(subject_dir) + '_' + modality + ".nii"))
         training_data_files.append(tuple(subject_files))
     if return_subject_ids:
         return training_data_files, subject_ids

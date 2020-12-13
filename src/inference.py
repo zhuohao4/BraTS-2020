@@ -20,7 +20,7 @@ def fetch_testing_data_files(return_subject_ids=False):
         # print(subject_dir, subject_ids)
         subject_files = list()
         for modality in config["training_modalities"]:
-            subject_files.append(os.path.join(subject_dir, os.path.basename(subject_dir) + '_' + modality + ".nii.gz"))
+            subject_files.append(os.path.join(subject_dir, os.path.basename(subject_dir) + '_' + modality + ".nii"))
         testing_data_files.append(tuple(subject_files))
     if return_subject_ids:
         return testing_data_files, subject_ids

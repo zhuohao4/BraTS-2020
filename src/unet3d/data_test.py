@@ -38,8 +38,8 @@ def write_data_to_file(testing_data_files, out_file, image_shape, truth_dtype=np
     Takes in a set of training images and writes those images to an hdf5 file.
     :param training_data_files: List of tuples containing the training data files. The modalities should be listed in
     the same order in each tuple. The last item in each tuple must be the labeled image. 
-    Example: [('sub1-T1.nii.gz', 'sub1-T2.nii.gz', 'sub1-truth.nii.gz'), 
-              ('sub2-T1.nii.gz', 'sub2-T2.nii.gz', 'sub2-truth.nii.gz')]
+    Example: [('sub1-T1.nii', 'sub1-T2.nii', 'sub1-truth.nii'), 
+              ('sub2-T1.nii', 'sub2-T2.nii', 'sub2-truth.nii')]
     :param out_file: Where the hdf5 file will be written to.
     :param image_shape: Shape of the images that will be saved to the hdf5 file.
     :param truth_dtype: Default is 8-bit unsigned integer. 

@@ -141,14 +141,14 @@ def run_validation_case(data_index, output_dir, model, data_file, training_modal
     # Azam: Back to original prediction image
     # Source: https://github.com/ellisdg/3DUnetCNN/issues/142
     # the template is the image whose dimensions u want to resample to, here 'img_template' is the sample image
-    img_template = os.path.join(config["test_dir"], os.path.basename(output_dir), os.path.basename(output_dir) + '_t1ce.nii.gz')
+    img_template = os.path.join(config["test_dir"], os.path.basename(output_dir), os.path.basename(output_dir) + '_t1ce.nii')
     prediction_image = resample_to_img(prediction_image, img_template, interpolation="nearest")
     
     if isinstance(prediction_image, list):
         for i, image in enumerate(prediction_image):
             image.to_filename(os.path.join(output_dir, "prediction_{0}.nii".format(i + 1)))
     else:
-        file_name = os.path.join(config['output_dir'], os.path.basename(output_dir) + ".nii.gz")
+        file_name = os.path.join(config['output_dir'], os.path.basename(output_dir) + ".nii")
         prediction_image.to_filename(file_name) # /data/output/0089_output.nii
 
 
