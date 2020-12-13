@@ -4,7 +4,7 @@ config = dict()
 config["image_shape"] = (128, 128, 128)  # This determines what shape the images will be cropped/resampled to.
 config["patch_shape"] = None  # switch to None to train on the whole image
 config["labels"] = (1, 2, 4)  # the label numbers on the input image
-config["n_base_filters"] = 16
+config["n_base_filters"] = 8
 config["n_labels"] = len(config["labels"])
 config["all_modalities"] = ["t1", "t1ce", "t2", "flair"]
 config["training_modalities"] = config["all_modalities"]  # change this if you want to only use some of the modalities
@@ -18,9 +18,9 @@ config["deconvolution"] = True  # if False, will use upsampling instead of decon
 
 config["batch_size"] = 1
 config["validation_batch_size"] = 1
-config["n_epochs"] = 500  # cutoff the training after this many epochs, default 500
-config["patience"] = 30  # learning rate will be reduced after this many epochs if the validation loss is not improving
-config["early_stop"] = 60  # training will be stopped after this many epochs without the validation loss improving
+config["n_epochs"] = 100  # cutoff the training after this many epochs, default 500
+config["patience"] = 6  # learning rate will be reduced after this many epochs if the validation loss is not improving
+config["early_stop"] = 12  # training will be stopped after this many epochs without the validation loss improving
 config["initial_learning_rate"] = 1e-4
 config["learning_rate_drop"] = 0.1  # factor by which the learning rate will be reduced
 config["validation_split"] = 0.9  # portion of the data that will be used for training
@@ -46,4 +46,4 @@ config["training_file"] = "./data/training_ids.pkl"
 config["validation_file"] = "./data/validation_ids.pkl"
 config["test_file"] = "./data/test_ids.pkl"
 
-config["overwrite"] = False  # If True, will previous files. If False, will use previously written files.
+config["overwrite"] = True  # If True, will previous files. If False, will use previously written files.

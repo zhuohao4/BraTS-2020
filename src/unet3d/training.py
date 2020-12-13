@@ -12,6 +12,11 @@ from unet3d.metrics import (dice_coefficient, dice_coefficient_loss, dice_coef, 
 # (Azam) Ref.: https://github.com/keras-team/keras/issues/12649
 K.image_data_format()
 
+import tensorflow as tf
+physical_devices = tf.config.experimental.list_physical_devices('GPU')
+if len(physical_devices) > 0:
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
 
 # learning rate schedule
 def step_decay(epoch, initial_lrate, drop, epochs_drop):
